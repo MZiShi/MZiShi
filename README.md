@@ -1,16 +1,18 @@
-### Hi there 👋
+# 自我介绍
+- 我是计算机学院21级计算机科学与技术专业的一名学生。
+- 我的兴趣有：长跑，听歌，游戏。
+# 我想弄懂的问题
+- 团队软件开发流程？
+    - 瀑布模型，统一流程（RUP），渐进交付的流程等。
+- 一个合格的软件的在哪方面有要求？
+    - 软件的开发效率、用户满意度、可靠性和可维护性
+- 需求分析流程阶段？
+    - 获取和引导需求，分析和定义需求，验证需求，在软件产品的生命周期中管理需求
+- 软件设计方法思路？
+    - 建模理解再分析开发。
+- 软件测试的方法？
+    - 单元测试，代码覆盖率测试，“探索式”的测试等。
 
-<!--
-**MZiShi/MZiShi** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+# 我想得到的收获
+- 实用的软件工程技术
+- 实践一些软件工程的方法论和工具
