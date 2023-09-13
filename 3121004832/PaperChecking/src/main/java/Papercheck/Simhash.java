@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Map;
 import com.hankcs.hanlp.HanLP;
 import com.hankcs.hanlp.seg.common.Term;
-
 public class Simhash {
     public static String MD5(String keyword){
         try {
@@ -65,4 +64,5 @@ public class Simhash {
 
         return simhash.toString();
     }
+
 }
