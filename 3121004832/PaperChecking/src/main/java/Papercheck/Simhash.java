@@ -28,7 +28,7 @@ public class Simhash {
     }
     public static String GetSimhash(String sentence){
         int[] v=new int[128];
-        if(sentence.length()<100){
+        if(sentence.length()<10){
             throw new MyException("文本过短无意义");
         }
         TermFrequencyCounter counter = new TermFrequencyCounter();

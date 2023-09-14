@@ -7,7 +7,6 @@ public class Filehandling {
     public static String readTxt(String txtPath) {
         if (!txtPath.endsWith(".txt")){
             throw new MyException("非txt类型文件");
-
         }
         StringBuilder str = new StringBuilder();
         String strLine;

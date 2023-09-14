@@ -11,8 +11,8 @@ public class Main {
             String simHash0 = Simhash.GetSimhash(path1);
             String simHash1 = Simhash.GetSimhash(path2);
             //计算相似度
-            double similarity = HammingDistance.GetSimilarity(simHash0, simHash1);
-            Filehandling.writeTxt(String.valueOf(similarity), resultFileName);
+            String similarity = HammingDistance.GetSimilarity(simHash0, simHash1);
+            Filehandling.writeTxt(similarity, resultFileName);
             // 退出程序
             System.exit(0);
         } catch (ArrayIndexOutOfBoundsException e) {
