@@ -1,6 +1,8 @@
 package Papercheck;
 import java.io.*;
 
+import org.jsoup.Jsoup;
+import org.jsoup.safety.Whitelist;
 public class Filehandling {
     public static String readTxt(String txtPath) {
         if (!txtPath.endsWith(".txt")){
@@ -23,8 +25,13 @@ public class Filehandling {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        return str.toString();
+        String A=str.toString();
+        String[] strings = {" ", "\n", "\r", "\t", "\\r", "\\n", "\\t", "&nbsp;", "&amp;", "&lt;", "&gt;", "&quot;", "&qpos;"};
+        for (String string : strings) {
+            A= A.replaceAll(string, "");
+        }
+       A = Jsoup.clean(A, Whitelist.none());
+        return A;
     }
 
 
