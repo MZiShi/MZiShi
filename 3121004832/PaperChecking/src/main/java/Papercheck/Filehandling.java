@@ -5,8 +5,13 @@ import org.jsoup.Jsoup;
 import org.jsoup.safety.Whitelist;
 public class Filehandling {
     public static String readTxt(String txtPath) {
-        if (!txtPath.endsWith(".txt")){
-            throw new MyException("非txt类型文件");
+
+        try{
+            if (!txtPath.endsWith(".txt")){
+                throw new MyException("非txt类型文件");
+            }
+        }catch (MyException e){
+            e.printStackTrace();
         }
         StringBuilder str = new StringBuilder();
         String strLine;
@@ -37,9 +42,12 @@ public class Filehandling {
 
     public static void writeTxt(String txtElem, String txtPath) {
 
-        if (!txtPath.endsWith(".txt")){
-            throw new MyException("非txt类型文件");
-
+        try{
+            if (!txtPath.endsWith(".txt")){
+                throw new MyException("非txt类型文件");
+            }
+        }catch (MyException e){
+            e.printStackTrace();
         }
         File file = new File(txtPath);
         try (FileWriter fileWriter = new FileWriter(file, true)) {

@@ -14,13 +14,13 @@ import com.hankcs.hanlp.mining.word.TermFrequencyCounter;
 public class Simhash {
     public static String MD5(String keyword){
         try {
-            if(keyword==null){
+            if(keyword==""){
                 throw new MyException("文本出错");
             }
             MessageDigest md = MessageDigest.getInstance("MD5");//指定MD5加密
             BigInteger b=new BigInteger(1, md.digest(keyword.getBytes(StandardCharsets.UTF_8)));//进行加密
             return b.toString(2);//返回二进制的hash值
-        } catch (NoSuchAlgorithmException e) {
+        } catch (NoSuchAlgorithmException | MyException e) {
             e.printStackTrace();
             return null;
         }
@@ -28,9 +28,14 @@ public class Simhash {
     }
     public static String GetSimhash(String sentence){
         int[] v=new int[128];
-        if(sentence.length()<10){
-            throw new MyException("文本过短无意义");
+        try {
+            if(sentence.length()<10){
+                throw new MyException("文本过短无意义");
+            }
+        } catch (MyException e) {
+            e.printStackTrace();
         }
+        //计算词频并得出关键词
         TermFrequencyCounter counter = new TermFrequencyCounter();
         counter.add(sentence);
         Map<String, Integer> wordFreqMap = new HashMap<>();
@@ -39,10 +44,12 @@ public class Simhash {
         }
         //加权计算
         for (Map.Entry<String, Integer> entry : wordFreqMap.entrySet()){
+            //获得hash值
             StringBuilder hash= new StringBuilder(Objects.requireNonNull(MD5(entry.getKey())));
             if(hash.length()<128){
                 hash.append("0".repeat(Math.max(0, 128 - hash.length())));
             }
+            //以词频作为权值
             for(int j=0;j<128;j++){
                 if(hash.charAt(j)=='1'){
                     v[j]+= entry.getValue();

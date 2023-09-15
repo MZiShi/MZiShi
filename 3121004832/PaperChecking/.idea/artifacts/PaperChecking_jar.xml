@@ -1,0 +1,15 @@
+<component name="ArtifactManager">
+  <artifact build-on-make="true" name="PaperChecking:jar">
+    <output-path>$PROJECT_DIR$/release</output-path>
+    <root id="root">
+      <element id="archive" name="PaperChecking.jar">
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/release/META-INF/MANIFEST.MF" />
+        </element>
+        <element id="module-output" name="PaperChecking" />
+      </element>
+      <element id="library" level="project" name="Maven: org.jsoup:jsoup:1.11.3" />
+      <element id="library" level="project" name="Maven: com.hankcs:hanlp:portable-1.8.4" />
+    </root>
+  </artifact>
+</component>
