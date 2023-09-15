@@ -34,6 +34,7 @@ public class Simhash {
             }
         } catch (MyException e) {
             e.printStackTrace();
+            return null;
         }
         //计算词频并得出关键词
         TermFrequencyCounter counter = new TermFrequencyCounter();

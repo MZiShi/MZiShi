@@ -48,6 +48,7 @@ public class Filehandling {
             }
         }catch (MyException e){
             e.printStackTrace();
+            return;
         }
         File file = new File(txtPath);
         try (FileWriter fileWriter = new FileWriter(file, true)) {
