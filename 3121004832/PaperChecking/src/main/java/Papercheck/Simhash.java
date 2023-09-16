@@ -14,7 +14,7 @@ import com.hankcs.hanlp.mining.word.TermFrequencyCounter;
 public class Simhash {
     public static String MD5(String keyword){
         try {
-            if(keyword==""){
+            if(keyword.equals("")){
                 throw new MyException("文本出错");
             }
             MessageDigest md = MessageDigest.getInstance("MD5");//指定MD5加密
