@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 public class Generate {
-    public  static List Creat(int scope ){
+    public  static List<String> Creat(int scope ){
         int OperatorNumber;//运算符数量
         int OperandNumber;//运算数数量
         boolean ifbracket;//是否生成括号
@@ -93,15 +93,10 @@ public class Generate {
             }
         }
         for(String str1:str){
-            switch (str1){
-                case "NaturalNumber":equation.add(String.valueOf(r.nextInt(scope)));break;
-                case "Fraction":equation.add(CreatFraction(scope));break;
-                case "(":
-                case ")":
-                case "+":
-                case "-":
-                case "*":
-                case "/":equation.add(str1);break;
+            switch (str1) {
+                case "NaturalNumber" -> equation.add(String.valueOf(r.nextInt(scope)));
+                case "Fraction" -> equation.add(CreatFraction(scope));
+                case "(", ")", "+", "-", "*", "/" -> equation.add(str1);
             }
         }
         return equation;
@@ -113,7 +108,17 @@ public class Generate {
         int f=gcd(numerator,denominator);
         numerator=numerator/f;
         denominator=denominator/f;
-        String str=numerator+"/"+denominator;
+        String str;
+        if(numerator/denominator!=0&&numerator%denominator!=0){
+
+            str=numerator/denominator+"'"+numerator%denominator+"/"+denominator;
+        }
+        else if(numerator%denominator==0){
+            str=numerator/denominator+"";
+        }
+        else{
+            str=numerator+"/"+denominator;
+        }
         return str;
     }
     public static int gcd(int a, int b) {
@@ -124,5 +129,40 @@ public class Generate {
             return min;
         return gcd(max - min, min);
     }
+    public static List<List<String>> EquationCreate(int quantity,int scope){
+        List<List<String>> equation=new ArrayList<>();
+        for(int i=0;i<quantity;i++){
+            boolean state=true;
+            List<String> temp=Creat(scope);
+            if(!BinaryTree.CheckDivide(ComputeFourRule.SuffExpression(temp))){
+                i-=1;
+                continue;
+            }
+            if(!BinaryTree.CheckSubtraction(ComputeFourRule.SuffExpression(temp))){
+                i-=1;
+                continue;
+            }
+            for (List<String> a:equation){
+                if(BinaryTree.CheckRepetition(ComputeFourRule.SuffExpression(temp),ComputeFourRule.SuffExpression(a))){
+                    state=false;
+                    break;
+                }
+            }
+            if(state){
+                equation.add(temp);
+            }else {
+                i-=1;
+            }
 
+        }
+        return equation;
+    }
+    public static List<String> Answer(List<List<String>> equation){
+        List<String> answer=new ArrayList<>();
+        for (List<String> temp:equation){
+            String str=ComputeFourRule.Compute(ComputeFourRule.SuffExpression(temp));
+            answer.add(str);
+        }
+        return answer;
+    }
 }
