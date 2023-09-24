@@ -24,7 +24,7 @@ class BinaryTreeTest {
     @Test
     void checkdivide(){
 
-        List<String> b=Arrays.asList("(","8","*","7",")","/","(","5","-","5",")");
+        List<String> b=Arrays.asList("(","8","*","7",")","÷","(","5","-","5",")");
         System.out.println(BinaryTree.CheckDivide(ComputeFourRule.SuffExpression(b)));
     }
 }

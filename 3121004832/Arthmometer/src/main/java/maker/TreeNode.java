@@ -45,7 +45,7 @@ public class TreeNode {
             stater= this.right.postOrderDivide();
         }
         if(!(statel&&stater)) return false;
-        if(this.name.equals("/")){
+        if(this.name.equals("÷")){
             List<String> Right=new ArrayList<>();
             this.right.postOrder(Right);
             if(ComputeFourRule.Compute(Right).equals("0")){

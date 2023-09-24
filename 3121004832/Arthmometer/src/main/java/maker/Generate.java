@@ -43,7 +43,7 @@ public class Generate {
                 str.add(j,"*");
             }
             else{
-                str.add(j,"/");
+                str.add(j,"÷");
             }
             j+=2;
         }
@@ -96,7 +96,7 @@ public class Generate {
             switch (str1) {
                 case "NaturalNumber" -> equation.add(String.valueOf(r.nextInt(scope)));
                 case "Fraction" -> equation.add(CreatFraction(scope));
-                case "(", ")", "+", "-", "*", "/" -> equation.add(str1);
+                case "(", ")", "+", "-", "*", "÷" -> equation.add(str1);
             }
         }
         return equation;

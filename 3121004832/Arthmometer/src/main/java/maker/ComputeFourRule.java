@@ -16,9 +16,9 @@ public class ComputeFourRule {
                 while (!stack.peek().equals("("))
                     suffexpression.add(stack.pop());
                 stack.pop();
-            }else if(suff.equals("*")||suff.equals("/")){
+            }else if(suff.equals("*")||suff.equals("÷")){
                 if(!stack.empty()){
-                    while (stack.peek().equals("*")||stack.peek().equals("/")) {
+                    while (stack.peek().equals("*")||stack.peek().equals("÷")) {
                         suffexpression.add(stack.pop());
                         if(stack.empty())
                             break;
@@ -27,7 +27,7 @@ public class ComputeFourRule {
                 stack.push(suff);
             }else if(suff.equals("+")||suff.equals("-")){
                 if(!stack.empty()){
-                    while (stack.peek().equals("+")||stack.peek().equals("-")||stack.peek().equals("*")||stack.peek().equals("/")){
+                    while (stack.peek().equals("+")||stack.peek().equals("-")||stack.peek().equals("*")||stack.peek().equals("÷")){
                         suffexpression.add(stack.pop());
                         if(stack.empty())
                             break;
@@ -70,7 +70,7 @@ public class ComputeFourRule {
                     leftnumber=number1[0]*number2[0];
                     rightnumber=number1[1]*number2[1];
                     stack1.push(leftnumber+"/"+rightnumber);
-                }else if(suff.equals("/")){
+                }else if(suff.equals("÷")){
                     number2=new Fraction().SplitNumber(stack1.pop());
                     number1=new Fraction().SplitNumber(stack1.pop());
                     leftnumber=number1[0]*number2[1];

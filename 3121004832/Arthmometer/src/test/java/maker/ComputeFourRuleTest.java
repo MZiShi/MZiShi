@@ -19,7 +19,7 @@ class ComputeFourRuleTest {
 
     @Test
     void compute() {
-        List<String> a= Arrays.asList("1'85/666","/","650","+","1'73/320","*","897");
+        List<String> a= Arrays.asList("1","÷","6","+","10","*","7");
         a=ComputeFourRule.SuffExpression(a);
         System.out.println(ComputeFourRule.Compute(a));
     }

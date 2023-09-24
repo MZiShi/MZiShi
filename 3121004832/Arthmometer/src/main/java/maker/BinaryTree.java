@@ -19,7 +19,7 @@ public class BinaryTree {
         Stack<TreeNode> stack = new Stack<>();
         for(String str1:a){
             TreeNode node=new TreeNode(str1);
-            if(str1.equals("+") || str1.equals("-") || str1.equals("*") || str1.equals("/")){
+            if(str1.equals("+") || str1.equals("-") || str1.equals("*") || str1.equals("÷")){
                 node.setRight(stack.pop());
                 node.setLeft(stack.pop());
             }

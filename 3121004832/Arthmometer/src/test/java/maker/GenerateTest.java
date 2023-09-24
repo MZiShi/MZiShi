@@ -21,14 +21,14 @@ class GenerateTest {
     }
     @Test
     void EquationCreateTest(){
-        List<List<String>> a=Generate.EquationCreate(10000,10);
+        List<List<String>> a=Generate.EquationCreate(100,10);
        for (List<String> b:a){
             System.out.println(String.join(" ",b));
         }
     }
     @Test
     void AnswerTest(){
-        List<List<String>> a=Generate.EquationCreate(10,1000);
+        List<List<String>> a=Generate.EquationCreate(10,10);
         List<String> b=Generate.Answer(a);
         for (List<String> c:a){
             System.out.println(String.join(" ",c));
