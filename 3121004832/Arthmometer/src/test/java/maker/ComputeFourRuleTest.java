@@ -11,15 +11,18 @@ class ComputeFourRuleTest {
 
     @Test
     void suffExpression() {
-        List<String> a=Generate.Creat(10);
-        System.out.println(a);
+        //转换为后缀表达式
+        List<String> a=Arrays.asList("1","+","2","+","3");
+        List<String> b=Arrays.asList("(","8","*","7",")","÷","(","5","-","4",")");
         a=ComputeFourRule.SuffExpression(a);
+        b=ComputeFourRule.SuffExpression(b);
         System.out.println(a);
     }
 
     @Test
     void compute() {
-        List<String> a= Arrays.asList("1","÷","6","+","10","*","7");
+        //计算结果
+        List<String> a= Arrays.asList("1","÷","6","+","2'7/10","*","7");
         a=ComputeFourRule.SuffExpression(a);
         System.out.println(ComputeFourRule.Compute(a));
     }

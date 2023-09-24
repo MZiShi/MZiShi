@@ -2,6 +2,7 @@ package maker;
 
 public class Fraction {
     public int[] SplitNumber(String str){
+        //分割分子分母
         int numerator;
         int denominator;
         int[] b = new int[2];

@@ -6,6 +6,7 @@ import java.util.Stack;
 
 public class ComputeFourRule {
     public static List<String> SuffExpression(List<String> list){
+        //转换为后缀表达式
         List<String> suffexpression= new ArrayList<>();
         Stack<String> stack= new Stack<>();
         for(int i=0;i<list.size();i++){

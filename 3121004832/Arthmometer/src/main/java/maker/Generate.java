@@ -123,8 +123,8 @@ public class Generate {
     }
     public static int gcd(int a, int b) {
         // 更相减损法，与辗转相除法一样，但使用了更高效的减法来代替取余
-        int max = a > b ? a : b;
-        int min = a < b ? a : b;
+        int max = Math.max(a, b);
+        int min = Math.min(a, b);
         if (max % min == 0)
             return min;
         return gcd(max - min, min);

@@ -14,20 +14,20 @@ class GenerateTest {
 
     @org.junit.jupiter.api.Test
     void creatFraction() {
+        System.out.println(Generate.CreatFraction(10));
     }
 
-    @org.junit.jupiter.api.Test
-    void gcd() {
-    }
     @Test
     void EquationCreateTest(){
-        List<List<String>> a=Generate.EquationCreate(100,10);
+        //生成试题
+        List<List<String>> a=Generate.EquationCreate(10,10);
        for (List<String> b:a){
             System.out.println(String.join(" ",b));
         }
     }
     @Test
     void AnswerTest(){
+        //计算答案
         List<List<String>> a=Generate.EquationCreate(10,10);
         List<String> b=Generate.Answer(a);
         for (List<String> c:a){

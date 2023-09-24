@@ -45,6 +45,7 @@ public class Main {
             else {
                 throw new MyException("参数组合错误");
             }
+            System.exit(0);
         }catch (ArrayIndexOutOfBoundsException e){
             System.out.println("缺少参数");
         }catch (MyException e){

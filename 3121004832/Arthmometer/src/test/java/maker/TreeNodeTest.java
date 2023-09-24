@@ -10,9 +10,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class TreeNodeTest {
 
-    @Test
-    void postOrderDivide() {
-    }
 
     @Test
     void postOrder() {
@@ -24,7 +21,4 @@ class TreeNodeTest {
 
     }
 
-    @Test
-    void postOrderSubtraction() {
-    }
 }

@@ -1,6 +1,7 @@
 package maker;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,7 +27,6 @@ public class read {
 
     }
     public static List<String> readTxt(String listPath) {
-        String str;
         String strLine;
         List<String> list=new ArrayList<>();
         // 将 txt文件按行读入 str中
@@ -34,7 +34,7 @@ public class read {
         FileInputStream fileInputStream;
         try {
             fileInputStream = new FileInputStream(file);
-            InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream, "UTF-8");
+            InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
             BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
             // 字符串拼接
             while ((strLine = bufferedReader.readLine()) != null) {
@@ -80,6 +80,7 @@ public class read {
                 e.printStackTrace();
             }
         }
+
     }
 }
 
