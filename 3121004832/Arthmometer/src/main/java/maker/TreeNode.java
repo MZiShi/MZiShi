@@ -42,7 +42,7 @@ public class TreeNode {
             stater= this.right.postOrderDivide();
         }
         if(!(statel&&stater)) return false;
-        if(this.name.equals("÷")){
+        if(this.name.equals("÷")){//除法判断右子树对应式子值是否会为0
             List<String> Right=new ArrayList<>();
             this.right.postOrder(Right);
             return !ComputeFourRule.Compute(Right).equals("0");
@@ -64,7 +64,7 @@ public class TreeNode {
             stater=this.right.postOrderSubtraction();
         }
         if(!(statel&&stater)) return false;
-        if(this.name.equals("-")){
+        if(this.name.equals("-")){//计算减法左右子树对应式子的值比较大小
             List<String> Left=new ArrayList<>();
             List<String> Right=new ArrayList<>();
             this.left.postOrder(Left);

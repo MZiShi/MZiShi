@@ -45,7 +45,7 @@ public class BinaryTree {
         } else if (!p.getName().equals(q.getName())) {
             return false;
         } else {
-            if(p.getName().equals("+") || p.getName().equals("*")){
+            if(p.getName().equals("+") || p.getName().equals("*")){//加法与乘法可交换节点
                 return (isSameTree(p.getLeft(), q.getLeft()) && isSameTree(p.getRight(), q.getRight()))||isSameTree(p.getLeft(),q.getRight() ) && isSameTree(p.getRight(),q.getLeft() );
             }
             return isSameTree(p.getLeft(), q.getLeft()) && isSameTree(p.getRight(), q.getRight());
